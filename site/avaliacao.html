@@ -1,64 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Soluções para eventos e audiovisual" />
-  <meta name="keywords" content="eventos,locação,audiovisual,iluminação,som" />
-  <meta property="og:title" content="Avaliações" />
-  <meta property="og:description" content="O que nossos clientes acham" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Avaliações de clientes sobre os serviços do Grupo Loca" />
+  <meta name="keywords" content="avaliação, clientes, eventos, audiovisual" />
   <title>Avaliações | Grupo Loca</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    blockquote {
-      background: #fafafa;
-      border-left: 5px solid var(--accent);
-      margin: 10px 0;
-      padding: 12px 15px;
-      font-style: italic;
-      border-radius: var(--radius);
-    }
-    .card h2, .card h1 { margin-bottom: 10px; }
-    textarea { resize: none; }
-  </style>
 </head>
 
 <body>
-  <!-- ===== HEADER (sem Home/Produtos/Clientes) ===== -->
-  <header class="header">
-    <div class="container header-container">
+  <!-- === CABEÇALHO === -->
+  <header>
+    <div class="header-container">
       <a href="index.html" class="logo">
         <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
       </a>
-      <nav class="nav">
-         <a href="login.html">Login</a>
-          <a href="produtos.html">Produtos</a>
+      <nav>
+        <a href="login.html">Login</a>
+        <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
-        <a href="avaliacao.html">Avaliações</a>
+        <a href="avaliacao.html" class="active">Avaliações</a>
       </nav>
     </div>
   </header>
 
-
-  <main class="container">
+  <!-- === CONTEÚDO PRINCIPAL === -->
+  <main>
     <section class="card">
       <h1>O que nossos clientes acham</h1>
-      <p>Veja depoimentos de clientes e deixe a sua opinião sobre nossos serviços.</p>
+      <p>Confira abaixo as opiniões e experiências de quem já utilizou nossos serviços.</p>
     </section>
 
     <section class="card">
       <h2>Deixe sua avaliação</h2>
-      <form id="formFeedback">
-        <div class="form-row">
+      <form>
+        <div>
           <label for="nome">Nome:</label>
-          <input id="nome" type="text" required>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
         </div>
 
-        <div class="form-row">
+        <div>
           <label for="nota">Nota (1 a 5):</label>
-          <select id="nota" required>
+          <select id="nota" name="nota" required>
             <option value="">Selecione</option>
             <option value="5">5 - Excelente</option>
             <option value="4">4 - Muito bom</option>
@@ -68,68 +53,29 @@
           </select>
         </div>
 
-        <div class="form-row">
+        <div>
           <label for="comentario">Comentário:</label>
-          <textarea id="comentario" rows="4" required></textarea>
+          <textarea id="comentario" name="comentario" rows="4" placeholder="Compartilhe sua experiência" required></textarea>
         </div>
 
-        <button class="primary" type="submit">Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </section>
 
     <section class="card">
       <h2>Depoimentos de Clientes</h2>
-      <div id="depoimentos">
-        <blockquote>"O atendimento foi impecável e a iluminação perfeita!" – <strong>Mariana Souza</strong></blockquote>
-        <blockquote>"Som nítido e suporte técnico excelente." – <strong>Carlos Pereira</strong></blockquote>
-        <blockquote>"Equipe pontual e muito profissional!" – <strong>Fernanda Lima</strong></blockquote>
-        <blockquote>"Excelente custo-benefício e dedicação total." – <strong>Rafael Mendes</strong></blockquote>
-      </div>
+      <blockquote>"O atendimento foi impecável e a iluminação perfeita!" – <strong>Mariana Souza</strong></blockquote>
+      <blockquote>"Som nítido e suporte técnico excelente." – <strong>Carlos Pereira</strong></blockquote>
+      <blockquote>"Equipe pontual e muito profissional!" – <strong>Fernanda Lima</strong></blockquote>
+      <blockquote>"Excelente custo-benefício e dedicação total." – <strong>Rafael Mendes</strong></blockquote>
     </section>
   </main>
 
+  <!-- === RODAPÉ === -->
   <footer>
-    <div class="container">
-      © <script>document.write(new Date().getFullYear())</script> Grupo Loca |
-      <a href="termos.html">Termos de Uso</a> |
-      <a href="politicas.html">Política de Privacidade</a>
-    </div>
+    © 2025 Grupo Loca |
+    <a href="termos.html">Termos de Uso</a> |
+    <a href="politicas.html">Política de Privacidade</a>
   </footer>
-
-  <script>
-    const form = document.getElementById('formFeedback');
-    const depoimentosDiv = document.getElementById('depoimentos');
-
-    window.onload = () => {
-      const saved = JSON.parse(localStorage.getItem('feedbacks') || '[]');
-      saved.forEach(f => adicionarDepoimento(f.nome, f.comentario));
-    };
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const comentario = document.getElementById('comentario').value.trim();
-      const nota = document.getElementById('nota').value;
-
-      if (!nome || !comentario || !nota) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-      }
-
-      const feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
-      feedbacks.push({ nome, comentario, nota });
-      localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
-
-      adicionarDepoimento(nome, comentario);
-      form.reset();
-      alert('Obrigado pela sua avaliação!');
-    });
-
-    function adicionarDepoimento(nome, comentario) {
-      const bq = document.createElement('blockquote');
-      bq.innerHTML = `"${comentario}" – <strong>${nome}</strong>`;
-      depoimentosDiv.prepend(bq);
-    }
-  </script>
 </body>
 </html>
