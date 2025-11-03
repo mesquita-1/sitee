@@ -13,49 +13,50 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">
-        <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
       </a>
       <nav>
-        <a href="login.html">Login</a>
+        <a href="index.html">Inicio</a>
+        <a href="quem-somos.html">Quem Somos</a>
         <a href="produtos.html">Produtos</a>
-        <a href="contato.html" class="active">Contato</a>
+        <a href="contato.html">Contato</a>
         <a href="avaliacao.html">Avaliações</a>
+         <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
 
-  <!-- === CONTEÚDO PRINCIPAL === -->
-  <main>
-    <section class="contato">
-      <h1>Entre em Contato</h1>
-      <p>Fale conosco para orçamentos, dúvidas ou parcerias. Nossa equipe terá prazer em atendê-lo!</p>
+ <main>
+    <section class="contato section">
+      <div class="container">
+        <h1 class="section-title">Entre em Contato</h1>
+        <p class="section-text">Fale conosco para orçamentos, dúvidas ou parcerias. Nossa equipe terá prazer em atendê-lo!</p>
 
-      <div class="contato-grid">
-        <!-- === INFORMAÇÕES === -->
-        <div class="contato-info">
-          <h2>Informações</h2>
-          <p><strong>Endereço:</strong> Av. Júlio Prestes, 146 - Guarulhos, SP</p>
-          <p><strong>Telefone:</strong> (11) 2455-2554</p>
-          <p><strong>WhatsApp:</strong> (11) 95604-3330</p>
-          <p><strong>E-mail:</strong> <a href="mailto:contato@grupoloca.com.br">contato@grupoloca.com.br</a></p>
-          <p><strong>Horário:</strong> Segunda a Sexta, das 9h às 18h</p>
-        </div>
+        <div class="contato-grid">
+          <div class="contato-info">
+            <h2>Nossas Informações</h2>
+            <p><strong>Endereço:</strong> Av. Júlio Prestes, 146 - Guarulhos, SP</p>
+            <p><strong>Telefone:</strong> (11) 2455-2554</p>
+            <p><strong>WhatsApp:</strong> (11) 95604-3330</p>
+            <p><strong>E-mail:</strong> <a href="mailto:contato@grupoloca.com.br">contato@grupoloca.com.br</a></p>
+            <p><strong>Horário:</strong> Segunda a Sexta, das 9h às 18h</p>
+          </div>
 
-        <!-- === FORMULÁRIO === -->
-        <div class="contato-form">
-          <h2>Envie uma Mensagem</h2>
-          <form>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+          <div class="contato-form">
+            <h2>Envie uma Mensagem</h2>
+            <form>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" placeholder="Seu nome" required>
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="Seu e-mail para contato" required>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="Seu e-mail" required>
 
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
 
-            <button type="submit">Enviar</button>
-          </form>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

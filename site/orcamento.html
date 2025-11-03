@@ -13,46 +13,46 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">
-        <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
       </a>
       <nav>
-        <a href="login.html">Login</a>
+        <a href="index.html">Inicio</a>
+        <a href="quem-somos.html">Quem Somos</a>
         <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
         <a href="avaliacao.html">Avaliações</a>
+         <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
 
   <!-- === CONTEÚDO PRINCIPAL === -->
-  <main>
+  <main class="container">
     <section class="orcamento">
-      <div class="container">
-        <h1>Solicite um Orçamento</h1>
-        <p>Preencha o formulário abaixo para que nossa equipe possa preparar uma proposta personalizada para o seu evento.</p>
+      <h1>Solicitar Orçamento</h1>
+      <p>Preencha os dados abaixo e entraremos em contato com sua proposta personalizada.</p>
 
-        <form class="form-orcamento">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+      <h2>Produtos selecionados:</h2>
+      <ul id="produtos-selecionados" style="margin-bottom: 20px;"></ul>
 
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Seu e-mail para contato" required>
+      <form>
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-          <label for="servico">Serviço Desejado</label>
-          <select id="servico" required>
-            <option value="">Selecione</option>
-            <option value="locavideo">LocaVídeo – Transmissão e gravação</option>
-            <option value="localed">LocaLed – Painéis de LED</option>
-            <option value="localuz">LocaLuz – Iluminação e efeitos</option>
-            <option value="outros">Outros</option>
-          </select>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
 
-          <label for="descricao">Descrição do Evento</label>
-          <textarea id="descricao" rows="5" placeholder="Conte-nos mais sobre o seu evento..." required></textarea>
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 00000-0000" required>
 
-          <button type="submit">Enviar Pedido</button>
-        </form>
-      </div>
+        <label for="data">Data do evento</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="mensagem">Informações adicionais</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva detalhes do evento"></textarea>
+
+        <button type="submit">Enviar Solicitação</button>
+      </form>
     </section>
   </main>
 
@@ -62,5 +62,22 @@
     <a href="termos.html">Termos de Uso</a> |
     <a href="politicas.html">Política de Privacidade</a>
   </footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const produtos = params.getAll("produto");
+    const container = document.getElementById("produtos-selecionados");
+
+    if (produtos.length > 0) {
+      produtos.forEach(nome => {
+        const item = document.createElement("li");
+        item.textContent = nome;
+        container.appendChild(item);
+      });
+    } else {
+      container.innerHTML = "<p>Nenhum produto selecionado.</p>";
+    }
+  });
+  </script>
 </body>
 </html>

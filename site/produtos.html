@@ -13,50 +13,81 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">
-        <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
       </a>
       <nav>
-        <a href="login.html">Login</a>
-        <a href="produtos.html" class="active">Produtos</a>
+        <a href="index.html">Inicio</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
         <a href="avaliacao.html">Avaliações</a>
+         <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
 
-  <!-- === CONTEÚDO PRINCIPAL === -->
-  <main>
+  <!-- ===== PRODUTOS ===== -->
+  <main class="container">
     <section class="produtos">
-      <div class="container">
-        <h1>Nossos Produtos e Soluções</h1>
-        <p>Equipamentos e estruturas de ponta para eventos de todos os tamanhos, com qualidade, eficiência e tecnologia.</p>
+      <h1>Nossos Produtos e Soluções</h1>
+      <p>Escolha os produtos que deseja alugar e solicite um orçamento personalizado.</p>
 
+      <form class="produtos-form">
         <div class="produtos-grid">
-          <!-- === PRODUTO 1 === -->
-          <div class="produto-card">
+          
+          <!-- PRODUTO 1 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaVídeo">
             <img src="img/produtos/locavideo.jpg" alt="LocaVídeo">
             <h3>LOCAVÍDEO</h3>
-            <p>Projetos completos de vídeo e transmissão ao vivo com qualidade profissional para eventos e conferências.</p>
-            <a class="btn-primary" href="orcamento.html">Solicitar Orçamento</a>
-          </div>
+            <p>Projetos completos de vídeo e transmissão ao vivo com qualidade profissional.</p>
+          </label>
 
-          <!-- === PRODUTO 2 === -->
-          <div class="produto-card">
+          <!-- PRODUTO 2 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaLed">
             <img src="img/produtos/localed.jpg" alt="LocaLed">
             <h3>LOCALED</h3>
-            <p>Painéis de LED com alta definição para conferências, shows e eventos corporativos. Versatilidade e impacto visual garantidos.</p>
-            <a class="btn-primary" href="orcamento.html">Solicitar Orçamento</a>
-          </div>
+            <p>Painéis de LED de alta definição para shows e eventos corporativos.</p>
+          </label>
 
-          <!-- === PRODUTO 3 === -->
-          <div class="produto-card">
+          <!-- PRODUTO 3 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaLuz">
             <img src="img/produtos/localuz.jpg" alt="LocaLuz">
             <h3>LOCALUZ</h3>
-            <p>Equipamentos de iluminação de última geração, criando experiências visuais únicas e ambientes personalizados.</p>
-            <a class="btn-primary" href="orcamento.html">Solicitar Orçamento</a>
-          </div>
+            <p>Iluminação de última geração para criar experiências visuais únicas.</p>
+          </label>
+
+          <!-- PRODUTO 4 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaSom">
+            <img src="img/produtos/locasom.png" alt="LocaSom">
+            <h3>LOCASOM</h3>
+            <p>Equipamentos de som potentes e nítidos para qualquer tipo de evento.</p>
+          </label>
+
+          <!-- PRODUTO 5 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaEstrutura">
+            <img src="img/produtos/locaestrutura.png" alt="LocaEstrutura">
+            <h3>LOCAESTRUTURA</h3>
+            <p>Palcos, tendas e coberturas modulares resistentes e versáteis.</p>
+          </label>
+
+          <!-- PRODUTO 6 -->
+          <label class="produto-card">
+            <input type="checkbox" name="produto" value="LocaDecor">
+            <img src="img/produtos/locadeco.png" alt="LocaDecor">
+            <h3>LOCADECOR</h3>
+            <p>Decoração temática e ambientação completa para seu evento.</p>
+          </label>
         </div>
-      </div>
+
+        <div class="orcamento-btn">
+          <button type="submit">Solicitar Orçamento</button>
+        </div>
+      </form>
     </section>
   </main>
 
@@ -66,5 +97,26 @@
     <a href="termos.html">Termos de Uso</a> |
     <a href="politicas.html">Política de Privacidade</a>
   </footer>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".produtos-form");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // impede envio normal
+
+      const selecionados = [...form.querySelectorAll("input[type='checkbox']:checked")].map(el => el.value);
+
+      if (selecionados.length === 0) {
+        alert("Selecione pelo menos um produto para solicitar orçamento.");
+        return;
+      }
+
+      const params = new URLSearchParams();
+      selecionados.forEach(produto => params.append("produto", produto));
+
+      window.location.href = "orcamento.html?" + params.toString();
+    });
+  });
+  </script>
 </body>
 </html>

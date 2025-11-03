@@ -13,13 +13,15 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">
-        <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
       </a>
       <nav>
-        <a href="login.html">Login</a>
+        <a href="index.html" class="active">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
         <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
         <a href="avaliacao.html">Avaliações</a>
+        <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
@@ -39,47 +41,61 @@
   <main>
     <!-- === QUEM SOMOS === -->
     <section class="section" id="quem-somos">
-      <div class="container">
-        <h2 class="section-title">Quem Somos</h2>
-        <p class="section-text">
-          Com anos de experiência no mercado, o <strong>Grupo Loca</strong> é referência em soluções audiovisuais e locação de equipamentos para eventos corporativos, shows e conferências.
-        </p>
-        <a class="link-btn" href="quem-somos.html">Saiba mais</a>
+      <div class="container quem-somos-container">
+        <div class="quem-somos-texto">
+          <h2 class="section-title">Quem Somos</h2>
+          <p class="section-text">
+            Com anos de experiência no mercado, o <strong>Grupo Loca</strong> é referência em soluções audiovisuais e locação de equipamentos para eventos corporativos, shows e conferências.
+          </p>
+          <a class="btn-primary" href="quem-somos.html">Saiba mais</a>
+        </div>
+
+        <div class="quem-somos-video">
+          <iframe width="360" height="203"
+            src="https://www.youtube.com/embed/u76EGbd68VQ"
+            title="Grupo Loca" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </section>
 
     <!-- === SERVIÇOS E EQUIPAMENTOS === -->
     <section class="section section-muted" id="produtos">
       <div class="container">
-        <h2 class="section-title">Serviços & Equipamentos</h2>
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-text">Oferecemos equipamentos de alta qualidade para tornar seu evento perfeito.</p>
         <div class="cards-grid">
           <article class="card">
-            <h3>Áudio Profissional</h3>
-            <p>Sistema de PA, microfones e monitoramento para qualquer porte de evento.</p>
+            <h3>🎵 Áudio Profissional</h3>
+            <p>Sistemas de som, microfones e equipamentos de alta qualidade para qualquer evento.</p>
           </article>
           <article class="card">
-            <h3>Vídeo & Telas</h3>
-            <p>LED, projeção e captação multicâmera com equipe técnica especializada.</p>
+            <h3>📺 Vídeo & Telas</h3>
+            <p>Telões LED, projeção e filmagem profissional com nossa equipe especializada.</p>
           </article>
           <article class="card">
-            <h3>Iluminação</h3>
-            <p>Projetos cênicos e iluminação arquitetural com controle DMX.</p>
+            <h3>💡 Iluminação</h3>
+            <p>Iluminação cênica e decorativa para criar o ambiente perfeito do seu evento.</p>
           </article>
         </div>
-        <a class="link-btn" href="produtos.html">Ver catálogo completo</a>
+        <br />
+        <a class="link-btn" href="produtos.html">Ver todos os serviços</a>
       </div>
     </section>
 
     <!-- === CLIENTES === -->
     <section class="section" id="clientes">
       <div class="container">
-        <h2 class="section-title">Alguns de Nossos Clientes</h2>
+        <h2 class="section-title">Nossos Clientes</h2>
+        <p class="section-text">Empresas que confiam no nosso trabalho para seus eventos especiais.</p>
         <div class="logos-grid">
           <div class="logo-item"><img src="img/clientes/1_hover_red.png" alt="Cliente 1"></div>
           <div class="logo-item"><img src="img/clientes/2_hover_red.png" alt="Cliente 2"></div>
           <div class="logo-item"><img src="img/clientes/3_hover_red.png" alt="Cliente 3"></div>
         </div>
-        <a class="link-btn" href="clientes.html">Ver todos os clientes</a>
+        <a class="link-btn" href="clientes.html">Conheça mais clientes</a>
       </div>
     </section>
 
@@ -87,7 +103,7 @@
     <section class="section section-muted" id="contato-home">
       <div class="container">
         <h2 class="section-title">Entre em Contato</h2>
-        <p class="section-text">Precisa de um orçamento ou quer tirar dúvidas? Nossa equipe está pronta para ajudar.</p>
+        <p class="section-text">Precisa de um orçamento ou quer tirar dúvidas?<br>Nossa equipe está pronta para ajudar.</p>
         <a class="btn-primary" href="contato.html">Fale Conosco</a>
       </div>
     </section>

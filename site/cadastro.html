@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | Grupo Loca</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- === CABEÇALHO === -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
+      </a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="quem-somos.html">Quem Somos</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="avaliacao.html">Avaliações</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- === CONTEÚDO PRINCIPAL === -->
+  <main>
+    <section class="cadastro section">
+      <div class="container">
+        <h1 class="section-title">Criar Conta</h1>
+        <p class="section-text">Cadastre-se para acessar nossos serviços e fazer solicitações.</p>
+
+        <div class="cadastro-container">
+          <form class="cadastro-form">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Digite seu melhor e-mail" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Crie uma senha" required>
+
+            <button type="submit">Criar Conta</button>
+          </form>
+
+          <div class="cadastro-links">
+            <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- === RODAPÉ === -->
+  <footer>
+    <div class="container">
+      <small>
+        © 2025 Grupo Loca — 
+        <a href="termos.html">Termos de Uso</a> |
+        <a href="politicas.html">Política de Privacidade</a>
+      </small>
+    </div>
+  </footer>
+</body>
+</html>

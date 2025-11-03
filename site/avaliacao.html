@@ -15,59 +15,82 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">
-        <img src="img/icons/logo-2.png" alt="Logo Grupo Loca">
+        <img src="img/icons/logo.png" alt="Logo Grupo Loca">
       </a>
       <nav>
-        <a href="login.html">Login</a>
+        <a href="index.html">Inicio</a>
+        <a href="quem-somos.html">Quem Somos</a>
         <a href="produtos.html">Produtos</a>
         <a href="contato.html">Contato</a>
-        <a href="avaliacao.html" class="active">Avaliações</a>
+        <a href="avaliacao.html">Avaliações</a>
+         <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
 
   <!-- === CONTEÚDO PRINCIPAL === -->
   <main>
-    <section class="card">
-      <h1>O que nossos clientes acham</h1>
-      <p>Confira abaixo as opiniões e experiências de quem já utilizou nossos serviços.</p>
-    </section>
+    <section class="avaliacoes section">
+      <div class="container">
+        <h1 class="section-title">Avaliações dos Clientes</h1>
+        <p class="section-text">Confira abaixo as opiniões e experiências de quem já utilizou nossos serviços.</p>
 
-    <section class="card">
-      <h2>Deixe sua avaliação</h2>
-      <form>
-        <div>
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        <!-- === DEPOIMENTOS === -->
+        <div class="depoimentos-grid">
+          <div class="depoimento-card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <blockquote>"O atendimento foi impecável e a iluminação perfeita! Superaram todas as expectativas."</blockquote>
+            <p class="autor">— Mariana Souza</p>
+          </div>
+
+          <div class="depoimento-card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Som nítido e suporte técnico excelente. Equipe muito profissional e dedicada."</blockquote>
+            <p class="autor">— Carlos Pereira</p>
+          </div>
+
+          <div class="depoimento-card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Equipe pontual e muito profissional! Recomendo sem dúvidas."</blockquote>
+            <p class="autor">— Fernanda Lima</p>
+          </div>
+
         </div>
 
-        <div>
-          <label for="nota">Nota (1 a 5):</label>
-          <select id="nota" name="nota" required>
-            <option value="">Selecione</option>
-            <option value="5">5 - Excelente</option>
-            <option value="4">4 - Muito bom</option>
-            <option value="3">3 - Regular</option>
-            <option value="2">2 - Ruim</option>
-            <option value="1">1 - Péssimo</option>
-          </select>
+        <!-- === FORMULÁRIO DE AVALIAÇÃO === -->
+        <div class="avaliacao-form-container">
+          <h2 class="form-title">Deixe sua Avaliação</h2>
+          <p class="form-subtitle">Sua opinião é muito importante para nós!</p>
+          
+          <form class="avaliacao-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+              </div>
+
+              <div class="form-group">
+                <label for="nota">Avaliação</label>
+                <select id="nota" name="nota" required>
+                  <option value="">Selecione uma nota</option>
+                  <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                  <option value="4">⭐⭐⭐⭐ Muito Bom</option>
+                  <option value="3">⭐⭐⭐ Regular</option>
+                  <option value="2">⭐⭐ Ruim</option>
+                  <option value="1">⭐ Péssimo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="comentario">Seu Comentário</label>
+              <textarea id="comentario" name="comentario" placeholder="Conte sua experiência conosco" required></textarea>
+            </div>
+
+            <button type="submit">Enviar Avaliação</button>
+          </form>
         </div>
-
-        <div>
-          <label for="comentario">Comentário:</label>
-          <textarea id="comentario" name="comentario" rows="4" placeholder="Compartilhe sua experiência" required></textarea>
-        </div>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
-    <section class="card">
-      <h2>Depoimentos de Clientes</h2>
-      <blockquote>"O atendimento foi impecável e a iluminação perfeita!" – <strong>Mariana Souza</strong></blockquote>
-      <blockquote>"Som nítido e suporte técnico excelente." – <strong>Carlos Pereira</strong></blockquote>
-      <blockquote>"Equipe pontual e muito profissional!" – <strong>Fernanda Lima</strong></blockquote>
-      <blockquote>"Excelente custo-benefício e dedicação total." – <strong>Rafael Mendes</strong></blockquote>
+      </div>
     </section>
   </main>
 
